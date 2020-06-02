@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/backchoice.png</file>
+        <file>images/button.png</file>
+        <file>images/easychoice.jpg</file>
+        <file>images/easymode.png</file>
+        <file>images/hardchoice.jpg</file>
+        <file>images/hardmode.png</file>
+        <file>images/introchoice.jpg</file>
+        <file>images/mainpage.png</file>
+        <file>images/quitchoice.png</file>
+        <file>images/test1.png</file>
+    </qresource>
+</RCC>
