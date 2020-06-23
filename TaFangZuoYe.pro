@@ -32,7 +32,10 @@ SOURCES += \
     intropage.cpp \
     towerclass.cpp \
     easymode.cpp \
-    hardmode.cpp
+    hardmode.cpp \
+    waypoint.cpp \
+    enemyclass.cpp \
+    gamebase.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,7 +43,11 @@ HEADERS += \
     intropage.h \
     towerclass.h \
     easymode.h \
-    hardmode.h
+    hardmode.h \
+    waypoint.h \
+    enemyclass.h \
+    gamebase.h \
+    unity.h\
 
 FORMS += \
         mainwindow.ui

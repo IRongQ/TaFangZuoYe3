@@ -26,35 +26,40 @@ MainWindow::MainWindow(QWidget *parent) :
     ButtonClass *Starteasy = new ButtonClass(":/images/easychoice.jpg");
     Starteasy->move(370,490);
     Starteasy->setParent(this);
-    Easymode * easymode = new Easymode;
+
     connect(Starteasy,&ButtonClass::clicked,this,[=](){
         Starteasy->btndown();
         Starteasy->btnup();
+        Easymode * easymode = new Easymode;
         QTimer::singleShot(300,this,[=](){       //计时装置，让动画效果得以显现
             this->hide();
             easymode->show();
+
         });
+        connect(easymode,&Easymode::back_to_main,this,[=](){
+            easymode->close();
+            this->show();
     });
-    connect(easymode,&Easymode::back_to_main,this,[=](){
-        easymode->hide();
-        this->show();
+
     });
   //生成困难模式
     ButtonClass *Starthard = new ButtonClass(":/images/hardchoice.jpg");
     Starthard->move(638,490);
     Starthard->setParent(this);
-    Hardmode * hardmode = new Hardmode;
+
     connect(Starthard,&ButtonClass::clicked,this,[=](){
         Starthard->btndown();
         Starthard->btnup();
+        Hardmode * hardmode = new Hardmode;
         QTimer::singleShot(300,this,[=](){       //计时装置，让动画效果得以显现
             this->hide();
             hardmode->show();
         });
+        connect(hardmode,&Hardmode::back_to_main,this,[=](){
+            hardmode->close();
+            this->show();
     });
-    connect(hardmode,&Hardmode::back_to_main,this,[=](){
-        hardmode->hide();
-        this->show();
+
     });
 
   //生成介绍页面
