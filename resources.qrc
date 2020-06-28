@@ -6,11 +6,28 @@
         <file>images/easymode.png</file>
         <file>images/hardchoice.jpg</file>
         <file>images/hardmode.png</file>
-        <file>images/introchoice.jpg</file>
         <file>images/mainpage.png</file>
         <file>images/quitchoice.png</file>
         <file>images/test1.png</file>
         <file>images/Y4.png</file>
         <file>images/yuanshichong1.png</file>
+        <file>images/towerposition.png</file>
+        <file>images/bullet.png</file>
+        <file>images/firegun.png</file>
+        <file>sound/bgm.wav</file>
+        <file>images/remove.png</file>
+        <file>images/uplevel.png</file>
+        <file>sound/hardbgm.wav</file>
+        <file>sound/monster1_die.wav</file>
+        <file>sound/monster2_die.wav</file>
+        <file>sound/pressbutton.wav</file>
+        <file>sound/remove_tower.wav</file>
+        <file>sound/settower.wav</file>
+        <file>sound/shoot.wav</file>
+        <file>sound/uplevel.wav</file>
+        <file>images/introduce.png</file>
+        <file>images/introchoice.jpg</file>
+        <file>images/easywin.jpg</file>
+        <file>sound/easywin.wav</file>
     </qresource>
 </RCC>

@@ -13,7 +13,7 @@
 #include <QList>
 
 
-class Easymode : public QMainWindow , public Gamebase
+class Easymode : public Gamebase
 {
     Q_OBJECT
     friend class Gamebase;
@@ -21,9 +21,8 @@ public:
     void paintEvent(QPaintEvent *);
     explicit Easymode(QWidget *parent = nullptr);
     void addeasywaypoint();
-    void removedEnemy(Monster1 *enemy);
-bool loadWave();
-private:
+    bool loadWave();
+    void loadTowerposition();
 
 
 private slots:

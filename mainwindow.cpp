@@ -20,8 +20,6 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setFixedSize(1450,750);
     ui->setupUi(this);
 
-
-
   //生成简单模式
     ButtonClass *Starteasy = new ButtonClass(":/images/easychoice.jpg");
     Starteasy->move(370,490);

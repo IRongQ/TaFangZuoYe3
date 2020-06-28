@@ -1,6 +1,7 @@
 #include "buttonclass.h"
 #include <QPixmap>
 #include <QPropertyAnimation>
+#include <QMediaPlayer>
 
 ButtonClass::ButtonClass(QString road):QPushButton(0)
 {
@@ -9,6 +10,7 @@ ButtonClass::ButtonClass(QString road):QPushButton(0)
     this->setStyleSheet("QPushButton{border:Opx;}");  //使其改变样式
     this->setIcon(pixmap);
     this->setIconSize(QSize(pixmap.width(),pixmap.height()));
+
 }
 
 void ButtonClass::btndown(){
@@ -25,6 +27,8 @@ void ButtonClass::btnup(){
     animation->setStartValue(QRect(this->x(),this->y()+10,this->width(),this->height()));
     animation->setEndValue(QRect(this->x(),this->y(),this->width(),this->height()));
     animation->start();
+    buttonvoice();
+    //Playvoice->playvoice(buttonclick);
 }
 
 

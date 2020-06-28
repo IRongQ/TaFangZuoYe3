@@ -11,12 +11,12 @@
 static const int Health_Bar_Width = 30;
 const QSize Enemyclass::ms_fixedSize(40, 40);
 
-Enemyclass::Enemyclass(Waypoint *startWayPoint, Gamebase *game, QPixmap img)
+Enemyclass::Enemyclass(Waypoint *startWayPoint, Gamebase *game, QPixmap img, int wave)
     : QObject(0)
     , m_active(false)
     , m_maxHp(40)
-    , m_currentHp(40)
-    , m_walkingSpeed(1.0)
+    , m_currentHp(40+10*wave)
+    , m_walkingSpeed(1.5)
     , m_rotationSprite(0.0)
     , m_pos(startWayPoint->pos())
     , m_destinationWayPoint(startWayPoint->nextWaypoint())
@@ -72,13 +72,13 @@ void Enemyclass::doActivate(){
     m_active=true;
 }
 
-Monster1::Monster1(Waypoint *startWayPoint, Gamebase *game, const QPixmap &sprite)
-    :Enemyclass(startWayPoint,game,sprite)
+Monster1::Monster1(Waypoint *startWayPoint, Gamebase *game,int wave, const QPixmap &sprite)
+    :Enemyclass(startWayPoint,game,sprite,wave)
 {
 }
 
-Monster2::Monster2(Waypoint *startWayPoint, Gamebase *game, const QPixmap &sprite )
-    :Enemyclass(startWayPoint,game,sprite)
+Monster2::Monster2(Waypoint *startWayPoint, Gamebase *game, int wave , const QPixmap &sprite)
+    :Enemyclass(startWayPoint,game,sprite,wave)
 {
 }
 void Enemyclass::draw(QPainter *painter) const
@@ -108,4 +108,35 @@ void Enemyclass::draw(QPainter *painter) const
     painter->restore();
 }
 
+QPoint Enemyclass::getposition() const{
+    return m_pos;
+}
 
+void Enemyclass::getLostSight(Towerclass *attacker)
+{
+    m_attackedtowerlist.removeOne(attacker);
+}
+
+void Enemyclass::getAttacked(Towerclass *attacktower){
+    m_attackedtowerlist.push_back(attacktower);
+}
+
+void Enemyclass::getDamage(int damage){
+    m_currentHp -= damage;
+    if (m_currentHp <= 0)
+    {
+        m_game->dieMoney(100);
+        getRemoved();
+    }
+}
+
+void Enemyclass::getRemoved()
+{
+    if (m_attackedtowerlist.empty())
+        return;
+
+    foreach (Towerclass *attacker, m_attackedtowerlist)
+        attacker->targetKilled();
+    // 通知所有塔此敌人已经阵亡
+    m_game->removedEnemy(this);
+}

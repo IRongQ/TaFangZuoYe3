@@ -12,7 +12,7 @@
 #include <QPushButton>
 #include <QList>
 
-class Hardmode : public QMainWindow,public Gamebase
+class Hardmode :public Gamebase
 {
     Q_OBJECT
 public:
@@ -21,8 +21,9 @@ public:
     void addhardwaypoint1();
     void addhardwaypoint2();
     void addhardwaypoint3();
-bool loadWave();
-private:
+    bool loadWave();
+    void loadTowerposition();
+
 
 
 private slots:

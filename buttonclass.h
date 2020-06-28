@@ -1,8 +1,10 @@
 #ifndef BUTTONCLASS_H
 #define BUTTONCLASS_H
-
+#include <QMainWindow>
 #include <QWidget>
 #include <QPushButton>
+#include <QMediaPlayer>
+#include <yinxiao.h>
 //用于满足各种按钮的功能
 
 class ButtonClass : public QPushButton
@@ -15,7 +17,9 @@ public:
 
 signals:
 
-public slots:
+private:
+    //Yinxiao * Playvoice;
 };
+
 
 #endif // BUTTONCLASS_H

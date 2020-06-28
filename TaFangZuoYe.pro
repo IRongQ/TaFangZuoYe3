@@ -35,7 +35,10 @@ SOURCES += \
     hardmode.cpp \
     waypoint.cpp \
     enemyclass.cpp \
-    gamebase.cpp
+    gamebase.cpp \
+    towerposition.cpp \
+    bullet.cpp \
+    yinxiao.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,6 +51,9 @@ HEADERS += \
     enemyclass.h \
     gamebase.h \
     unity.h\
+    towerposition.h \
+    bullet.h \
+    yinxiao.h
 
 FORMS += \
         mainwindow.ui
@@ -55,6 +61,8 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
+
+CONFIG+=resources_big
 
 
 
